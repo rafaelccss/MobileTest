@@ -10,7 +10,8 @@
 		4B83F0FF28AEBECB006E033B /* MobileTestApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B83F0FE28AEBECB006E033B /* MobileTestApp.swift */; };
 		4B83F10128AEBECB006E033B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B83F10028AEBECB006E033B /* ContentView.swift */; };
 		4B83F10328AEBECB006E033B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4B83F10228AEBECB006E033B /* Assets.xcassets */; };
-		4B83F10628AEBECB006E033B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4B83F10528AEBECB006E033B /* Preview Assets.xcassets */; };
+		4B83F11028AEC161006E033B /* Offer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B83F10F28AEC161006E033B /* Offer.swift */; };
+		4B83F11428AEC17E006E033B /* Lead.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B83F11328AEC17E006E033B /* Lead.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -18,7 +19,8 @@
 		4B83F0FE28AEBECB006E033B /* MobileTestApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MobileTestApp.swift; sourceTree = "<group>"; };
 		4B83F10028AEBECB006E033B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		4B83F10228AEBECB006E033B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		4B83F10528AEBECB006E033B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		4B83F10F28AEC161006E033B /* Offer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Offer.swift; sourceTree = "<group>"; };
+		4B83F11328AEC17E006E033B /* Lead.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lead.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,20 +53,53 @@
 		4B83F0FD28AEBECB006E033B /* MobileTest */ = {
 			isa = PBXGroup;
 			children = (
-				4B83F0FE28AEBECB006E033B /* MobileTestApp.swift */,
-				4B83F10028AEBECB006E033B /* ContentView.swift */,
+				4B83F11128AEC16C006E033B /* Lead */,
+				4B83F10D28AEC146006E033B /* Main */,
+				4B83F10C28AEC12C006E033B /* Offer */,
 				4B83F10228AEBECB006E033B /* Assets.xcassets */,
-				4B83F10428AEBECB006E033B /* Preview Content */,
 			);
 			path = MobileTest;
 			sourceTree = "<group>";
 		};
-		4B83F10428AEBECB006E033B /* Preview Content */ = {
+		4B83F10C28AEC12C006E033B /* Offer */ = {
 			isa = PBXGroup;
 			children = (
-				4B83F10528AEBECB006E033B /* Preview Assets.xcassets */,
+				4B83F10E28AEC152006E033B /* View */,
 			);
-			path = "Preview Content";
+			path = Offer;
+			sourceTree = "<group>";
+		};
+		4B83F10D28AEC146006E033B /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				4B83F0FE28AEBECB006E033B /* MobileTestApp.swift */,
+				4B83F10028AEBECB006E033B /* ContentView.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		4B83F10E28AEC152006E033B /* View */ = {
+			isa = PBXGroup;
+			children = (
+				4B83F10F28AEC161006E033B /* Offer.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		4B83F11128AEC16C006E033B /* Lead */ = {
+			isa = PBXGroup;
+			children = (
+				4B83F11228AEC172006E033B /* View */,
+			);
+			path = Lead;
+			sourceTree = "<group>";
+		};
+		4B83F11228AEC172006E033B /* View */ = {
+			isa = PBXGroup;
+			children = (
+				4B83F11328AEC17E006E033B /* Lead.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -125,7 +160,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4B83F10628AEBECB006E033B /* Preview Assets.xcassets in Resources */,
 				4B83F10328AEBECB006E033B /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -137,8 +171,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4B83F11028AEC161006E033B /* Offer.swift in Sources */,
 				4B83F10128AEBECB006E033B /* ContentView.swift in Sources */,
 				4B83F0FF28AEBECB006E033B /* MobileTestApp.swift in Sources */,
+				4B83F11428AEC17E006E033B /* Lead.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -266,7 +302,6 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"MobileTest/Preview Content\"";
 				DEVELOPMENT_TEAM = 5H2RJVTS74;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -295,7 +330,6 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"MobileTest/Preview Content\"";
 				DEVELOPMENT_TEAM = 5H2RJVTS74;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
