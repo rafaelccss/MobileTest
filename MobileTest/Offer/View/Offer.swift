@@ -1,6 +1,8 @@
 import SwiftUI
 
-struct Offer: View {
+struct OfferView: View {
+    @ObservedObject var viewModel = OfferViewModel()
+    
     var body: some View {
         Text("Hello, Offer!")
     }
@@ -8,6 +10,6 @@ struct Offer: View {
 
 struct Offer_Previews: PreviewProvider {
     static var previews: some View {
-        Offer()
+        OfferView()
     }
 }
