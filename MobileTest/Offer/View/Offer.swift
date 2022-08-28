@@ -4,7 +4,27 @@ struct OfferView: View {
     @ObservedObject var viewModel = OfferViewModel()
     
     var body: some View {
-        Text("Hello, Offer!")
+        NavigationView {
+            ScrollView {
+                VStack {
+                    ForEach(viewModel.offerModel!.offers) { offer in
+                        NavigationLink(
+                            destination: OfferDetail()
+                        ) {
+                            OfferComponent(offer: offer)
+                                .padding(.horizontal, 16)
+                                .padding(.bottom, 24)
+                        }
+                        .buttonStyle(.plain)
+                    }
+                }
+            }
+            .background(
+                Color("listColor")
+                    .edgesIgnoringSafeArea([.top, .horizontal])
+            )
+            .navigationTitle("Oferta")
+        }
     }
 }
 

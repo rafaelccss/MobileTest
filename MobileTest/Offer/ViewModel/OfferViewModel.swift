@@ -7,6 +7,6 @@ final class OfferViewModel: ObservableObject {
     lazy var offerModel = try? JSONDecoder().decode(OfferModel.self, from: jsonData!)
     
     init() {
-        print(offerModel)
+        print(offerModel as Any)
     }
 }

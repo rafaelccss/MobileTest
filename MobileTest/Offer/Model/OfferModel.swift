@@ -11,7 +11,9 @@ struct OfferModel: Codable {
 }
 
 // MARK: - Offer
-struct Offer: Codable {
+struct Offer: Codable, Identifiable {
+    var id = UUID()
+    
     let state: String
     let embedded: OfferEmbedded
     let links: Links
