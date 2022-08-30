@@ -1,12 +1,34 @@
 import Foundation
+import Combine
 
 final class OfferDetailViewModel: ObservableObject {
     
-    let bundlePath = Bundle.main.path(forResource: "OfferDetail", ofType: "json")
-    lazy var jsonData = try? String(contentsOfFile: bundlePath!).data(using: .utf8)
-    lazy var offerModel = try? JSONDecoder().decode(OfferDetailModel.self, from: jsonData!)
+    @Published var offerDetail: OfferDetailModel?
     
-    init() {
-        print(offerModel as Any)
+    private var network: NetworkProtocol
+    
+    private var bag = Set<AnyCancellable>()
+    
+    init(url: String) {
+        network = Network()
+        network.url = url
+        
+        fetchOfferDetail()
+    }
+    
+    func fetchOfferDetail() {
+        let request: AnyPublisher<OfferDetailModel, Error> = network.fetch()
+        
+        request
+            .receive(on: DispatchQueue.main)
+            .sink(
+                receiveCompletion: { error in
+                    print(error)
+                },
+                receiveValue: { [weak self] offerDetail in
+                    self?.offerDetail = offerDetail
+                }
+            )
+            .store(in: &bag)
     }
 }

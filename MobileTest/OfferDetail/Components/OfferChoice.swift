@@ -37,7 +37,8 @@ struct OfferChoice: View {
                 .background(Color.green)
             }
         }
-        .frame(height: 48)
+        .background(Color.white)
+        .frame(maxHeight: 48)
     }
 }
 

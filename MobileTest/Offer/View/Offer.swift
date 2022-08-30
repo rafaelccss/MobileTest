@@ -6,10 +6,12 @@ struct OfferView: View {
     var body: some View {
         NavigationView {
             ScrollView {
-                VStack {
-                    ForEach(viewModel.offerModel!.offers) { offer in
+                if let offers = viewModel.offerModel?.offers {
+                    ForEach(offers) { offer in
                         NavigationLink(
-                            destination: OfferDetail()
+                            destination: OfferDetail(
+                                viewModel: OfferDetailViewModel(url: offer.links.linksSelf.href)
+                            )
                         ) {
                             OfferComponent(offer: offer)
                                 .padding(.horizontal, 16)
